@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'script.js' %}"></script>
+    <title>Input of info</title>
+
+</head>
+<body>
+<form id="inputs">
+    <input name="data" type="text" value="">
+
+</form>
+    <input form="inputs" type="button" id="add_input" value="добавить">
+    <input form="inputs" type="submit" value="отправвить">
+</body>
+</html>
