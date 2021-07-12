@@ -1,19 +1,23 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="{% static 'script.js' %}"></script>
-    <title>Input of info</title>
 
-</head>
-<body>
-<form id="inputs">
-    <input name="data" type="text" value="">
+{% block script %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{% static 'add_input.js' %}"></script>
+{% endblock script %}
+
+{% block title %}
+    <title>Input of info</title>
+{% endblock title %}
+
+{% block content %}
+<form id="inputs" action="{% url 'save' %}" method="post">
+    {% csrf_token %}
+    <input name="input_name">
 
 </form>
-    <input form="inputs" type="button" id="add_input" value="добавить">
-    <input form="inputs" type="submit" value="отправвить">
-</body>
-</html>
+<div>
+    <input form="inputs" type="button" id="add_input" value="add input">
+    <input form="inputs" type="submit" value="submit">
+</div>
+{% endblock content %}
