@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Preserved information</title>
+{% endblock title %}
+
+{% block content %}
+    {% for info in all_saved_info %}
+    <p>{{ info }}</p>
+    {% endfor %}
+{% endblock content %}
